@@ -1,0 +1,55 @@
+{% include 'doctor_header.html' %}
+    <section style="background: url(/static/images/m2.jpg) center center no-repeat;
+  background-size:cover;
+  background-attachment: fixed;
+  color: #cfcfcf;height: auto;
+        margin-top:80px;" id="home">
+       <div class="overlay">
+           <div class="container">
+               <div class="row">  
+
+
+<center>
+	{% if data['view']%}<br>
+	<h1>Patient Details</h1>
+	<form><br><br>
+		<table class="table">
+			<tr>
+				<th>Sl.No</th>
+				<th>User Name</th>
+				<th>Phone</th>
+				<th>Email</th>
+				<th>House Name</th>
+				<th>Place</th>
+				<th>Gender</th>
+				<th>DOB</th>
+				<th>Blood Group</th>
+				
+			</tr>
+			{% for i in data['view'] %}
+			<tr>
+				<td>{{loop.index}}</td>
+				<td>{{i['uname']}}</td>
+				<td>{{i['phone']}}</td>
+				<td>{{i['email']}}</td>
+
+				<td>{{i['house_name']}}</td>
+				<td>{{i['place']}}</td>
+				<td>{{i['gender']}}</td>
+				<td>{{i['dob']}}</td>
+				<td>{{i['blood_group']}}</td>
+				
+			</tr>
+			{% endfor %}
+		</table>
+	</form>
+	{% else %}<br><br><h1>No Patients</h1><br><br>{% endif %}
+</center>
+	  </div>
+           </div>
+           <br><br><br><br><br><br><br><br><br>
+       </div>  
+      
+   </section>
+
+{% include 'footer.html' %}

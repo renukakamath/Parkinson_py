@@ -1,0 +1,34 @@
+{% include 'admin_header.html' %}
+{% include 'sub_header.html' %}
+<center>
+	{% if data['view']%}<br><br>
+	<h1>Pets Details</h1><br>
+	<form>
+		<table class="table">
+			<tr>
+				<th>Sl.No</th>
+				<th>Name</th>
+				<th>Type</th>
+				<th>Breed</th>
+				<th>Age</th>
+				<th>Other Details</th>
+				<th>Image</th>
+			</tr>
+			{% for i in data['view'] %}
+			<tr>
+				<td>{{loop.index}}</td>
+				<td>{{i['name']}}</td>
+				<td>{{i['type']}}</td>
+				<td>{{i['breed']}}</td>
+				<td>{{i['age']}}</td>
+				<td>{{i['other_details']}}</td>
+				<td><img src="/{{i['image']}}" style="width: 120px;height: 120px;"></td>
+				
+			</tr>
+			{% endfor %}
+		</table>
+	</form>
+	{% else %}<br><br><h1>No Pets</h1><br><br>{% endif %}
+</center>
+{% include 'sub_footer.html' %}
+{% include 'footer.html' %}

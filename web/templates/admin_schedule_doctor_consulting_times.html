@@ -1,0 +1,79 @@
+{% include 'admin_header.html' %}
+
+  <section style="background: url(/static/images/m5.jpg) center center no-repeat;
+  background-size:cover;
+  background-attachment: fixed;
+  color: #cfcfcf;height: auto;
+        margin-top:80px;" id="home">
+       <div class="overlay">
+           <div class="container">
+               <div class="row">
+                  <center>
+                  <form method="post">  
+<center>
+	<h1>Schedule Doctor Time</h1><br>
+	<form method="post">
+		<table class="table" style="width: 600px">
+			<tr>
+				<th>Select Doctor</th>
+				<td><select class="form-control" required name="did">
+					{% for r in data['did'] %}
+					<option value="{{r['doctor_id']}}">{{r['doctor_name']}}</option>
+					{% endfor %}
+				</select></td>
+			</tr>
+			<tr>
+				<th>Start Time</th>
+				<td><input type="time" class="form-control" required name="stime"></td>
+			</tr>
+			<tr>
+				<th>End Time</th>
+				<td><input type="time" class="form-control" required name="etime"></td>
+			</tr>
+			<tr>
+				<th>Date</th>
+				<td><input type="date" class="form-control" required name="date"></td>
+			</tr>
+			<tr>
+				<th>Consulting Fee</th>
+				<td><input type="number" min="0" class="form-control" required name="fee"></td>
+			</tr>
+			<tr><td><br></td></tr>
+			<tr>
+				<td colspan=2 align="center"><input class="btn btn-primary" type="submit" name="submit" value="Set Schedule"></td>
+			</tr>
+		</table>
+	</form>
+	<br><br>
+	{% if data['view'] %}
+	<h2>Schedule Details</h2><br>
+	<table class="table">
+		<tr>
+			<th>Sl.No</th>
+			<th>Doctor Name</th>
+			<th>Date</th>
+			<th>Starting Time</th>
+			<th>Ending Time</th>
+			<th>Fee</th><th></th>
+		</tr>
+		{% for i in data['view'] %}
+		<tr>
+			<td>{{loop.index}}</td>
+			<td>{{i['doctor_name']}}</td>
+			<td>{{i['date']}}</td>
+			<td>{{i['start_time']}}</td>
+			<td>{{i['end_time']}}</td>
+			<td>{{i['fee_amount']}}</td>
+			<td><a class="btn btn-danger" href="?ids={{i['schedule_id']}}">Remove</a></td>
+		</tr>
+		{% endfor %}
+	</table>{% endif %}
+</center>
+ </div>
+           </div>
+           <br><br><br><br><br><br><br><br><br>
+       </div>  
+      
+   </section>
+
+{% include 'footer.html' %}

@@ -1,0 +1,64 @@
+{% include 'doctor_header.html' %}
+    <section style="background: url(/static/images/m2.jpg) center center no-repeat;
+  background-size:cover;
+  background-attachment: fixed;
+  color: #cfcfcf;height: auto;
+        margin-top:80px;" id="home">
+       <div class="overlay">
+           <div class="container">
+               <div class="row">  
+
+
+
+<center>
+<h1 style="color: white">Add Medical Notes</h1>
+	
+	<form method="post">
+		<table class="table" style="width: 400px;color: white">
+			<tr>
+				<th style="text-align: right;">User Name :</th>
+				<td style="color: white">{{data['view1'][0]['uname']}}</td>
+			</tr>
+			<tr>
+				<th style="text-align: right;">Phone :</th>
+				<td style="color: white">+91&nbsp;{{data['view1'][0]['phone']}}</td>
+			</tr>
+		
+		</table><br>
+		<div class="jumbotron">
+		<table class="table" style="width: 400px;color: white">
+			<tr>
+				<th><textarea pattern="[a-zA-Z0-9\s]" class="form-control" name="desc"></textarea>
+				<td colspan="2" align="center"><input class="btn btn-info" type="submit" name="submit" value="Add"></td>
+			</tr>
+		</table></div>
+		{% if data['view']%}
+		<h3>Disease history</h3>
+		<div style="height:200px; width: 500px; overflow-y: scroll;">
+		<table class="table" style="width: 400px;color: white">
+			<tr>
+				<th>Sl.No</th>
+				<th>Decsiption</th>
+				<th>Date</th>
+			</tr>
+			{% for i in data['view'] %}
+			<tr>
+				<td>{{loop.index}}</td>
+				<td>{{i['description']}}</td>
+				<td>{{i['date_time']}}</td>
+			</tr>
+			{% endfor %}
+		</table>
+	</div>
+	</form>
+	{% else %}<br><br><h1>No Medical Notes</h1><br><br>{% endif %}
+</center>
+</center>
+	  </div>
+           </div>
+           <br><br><br><br><br><br><br><br><br>
+       </div>  
+      
+   </section>
+
+{% include 'footer.html' %}

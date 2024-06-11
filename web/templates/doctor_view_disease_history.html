@@ -1,0 +1,45 @@
+{% include 'doctor_header.html' %}
+    <section style="background: url(/static/images/m2.jpg) center center no-repeat;
+  background-size:cover;
+  background-attachment: fixed;
+  color: #cfcfcf;height: auto;
+        margin-top:80px;" id="home">
+       <div class="overlay">
+           <div class="container">
+               <div class="row">  
+
+
+<center>
+	{% if data['view']%}<br>
+	<h1 style="color: white">Booking Details</h1><br>
+	<form>
+		<table class="table" style="width: 400px;color: white">
+			<tr>
+				<th style="color: white">User Name</th>
+				<td style="color: white">{{data['view'][0]['uname']}}</td>
+			</tr>
+			<tr>
+				<th style="color: white">Phone</th>
+				<td style="color: white">{{data['view'][0]['phone']}}</td>
+			</tr>
+			
+		</table><br>
+		<table>
+			<tr>
+				<td><a class="btn btn-warning" href="doctor_add_prescription?book_id={{data['view'][0]['book_id']}}">Add Prescription</a></td>
+				<td><a class="btn btn-warning" href="doctor_add_medical_notes?book_id={{data['view'][0]['book_id']}}">Add Disease Details</a></td>
+				
+			</tr>
+		</table><br>
+	</div>
+	</form>
+	{% else %}<br><br><h1>No Disease History</h1><br><br>{% endif %}
+</center>
+	  </div>
+           </div>
+           <br><br><br><br><br><br><br><br><br>
+       </div>  
+      
+   </section>
+
+{% include 'footer.html' %}

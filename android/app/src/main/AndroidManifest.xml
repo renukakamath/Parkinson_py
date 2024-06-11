@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.bystander">
+
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@drawable/logo1"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/logo1"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.ByStander"
+        android:usesCleartextTraffic="true"
+        tools:targetApi="31">
+        <activity
+            android:name=".PredictDisease"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".UserViewPrescriptionDetails"
+            android:exported="false" />
+        <activity
+            android:name=".UserViewDiseaseHistory"
+            android:exported="false" />
+        <activity
+            android:name=".UserAddPhysicalConditions"
+            android:exported="false" />
+        <activity
+            android:name=".UserViewPatients"
+            android:exported="false" />
+        <activity
+            android:name=".UserMakePayment"
+            android:exported="false" />
+        <activity
+            android:name=".UserBookDoctor"
+            android:exported="false" />
+        <activity
+            android:name=".UserViewSchedule"
+            android:exported="false" />
+        <activity
+            android:name=".UserViewDoctors"
+            android:exported="false" />
+        <activity
+            android:name=".UserViewPrescription"
+            android:exported="false" />
+        <activity
+            android:name=".UserViewMedicalHistory"
+            android:exported="false" />
+        <activity
+            android:name=".UserViewBookings"
+            android:exported="false" />
+        <activity
+            android:name=".UserViewDepartment"
+            android:exported="false" />
+        <activity
+            android:name=".UserAddPatients"
+            android:exported="false" />
+        <activity
+            android:name=".Userhome"
+            android:exported="false" />
+        <activity
+            android:name=".Ipsettings"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Inter_chat_immigration"
+            android:exported="false" />
+        <activity
+            android:name=".Userregister"
+            android:exported="false" />
+        <activity
+            android:name=".Login"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="true" />
+    </application>
+
+</manifest>

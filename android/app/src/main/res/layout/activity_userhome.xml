@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:background="@drawable/img3"
+    tools:context=".Userhome">
+
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="40dp"
+        android:textColor="#120202"
+        android:text="WELCOME" />
+
+    <Button
+        android:id="@+id/patient"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="ADD PATIENT DETAILS" />
+
+
+    <Button
+        android:id="@+id/v_patient"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="VIEW PATIENT DETAILS" />
+
+    <Button
+        android:id="@+id/doct"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="vIEW DEPARTMENTS" />
+
+    <Button
+        android:id="@+id/book"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="vIEW BOOKINGS" />
+
+    <Button
+        android:id="@+id/viewpredict"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="PREDICT" />
+
+
+
+    <Button
+        android:id="@+id/pre"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="vIEW PRESCRIPTION" />
+
+
+<!--    <Button-->
+<!--        android:id="@+id/add_pyscical_condition"-->
+<!--        android:layout_width="300dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="10dp"-->
+<!--        android:text="vIEW PRESCRIPTION" />-->
+
+<!--    <Button-->
+<!--        android:id="@+id/CHAT"-->
+<!--        android:layout_width="300dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="10dp"-->
+<!--        android:text="vIEW PRESCRIPTION" />-->
+
+    <Button
+        android:id="@+id/logout"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="LOGOUT" />
+
+
+</LinearLayout>

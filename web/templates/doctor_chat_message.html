@@ -1,0 +1,55 @@
+{% include 'doctor_header.html' %}
+    <section style="background: url(/static/images/m2.jpg) center center no-repeat;
+  background-size:cover;
+  background-attachment: fixed;
+  color: #cfcfcf;height: auto;
+        margin-top:80px;" id="home">
+       <div class="overlay">
+           <div class="container">
+               <div class="row">  
+
+               	
+<center>
+	<h1>{{ data['name'][0]['name'] }}</h1>
+<br></div>
+<form method="post">
+	<div style="height:300px; width:700px; overflow-y: scroll;">
+<table>
+	{% for row in data['msg'] %}
+	{% if row['sender_id']==session['lid'] and row['sender_type']=='doctor' %}
+	<tr>
+		<td></td>
+		<td>
+			<input class="btn btn-primary" type="text" class="form-control" name="message" value="{{row['message']}}"></td>
+	</tr>
+	{% else %}
+	<tr>
+		<td><input class="btn btn-info" type="text" class="form-control" name="message" value="{{row['message']}}"></td>
+		<td></td>
+	</tr>
+	{% endif %}
+	{% endfor %}
+	<tr><td><br></td></tr>
+</table>
+</div>
+<table>
+	<tr>
+		<td>
+			<input type="text" style="border-color: blue" class="form-control" name="msg" >
+		</td>
+		<td align="center">
+			<input type="submit" name="submit" class="btn btn-success" value="Send Message">
+		</td>
+	</tr>
+	<tr><td><br></td></tr>
+</table>
+</form>
+</center>
+	  </div>
+           </div>
+           <br><br><br><br><br><br><br><br><br>
+       </div>  
+      
+   </section>
+
+{% include 'footer.html' %}

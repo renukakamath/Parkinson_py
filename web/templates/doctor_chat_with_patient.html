@@ -1,0 +1,45 @@
+{% include 'doctor_header.html' %}
+    <section style="background: url(/static/images/m2.jpg) center center no-repeat;
+  background-size:cover;
+  background-attachment: fixed;
+  color: #cfcfcf;height: auto;
+        margin-top:80px;" id="home">
+       <div class="overlay">
+           <div class="container">
+               <div class="row">  
+
+<center><br>
+	<h1>Messages</h1><br>
+{% if data['msgs'] %}
+
+<table class="table">
+	<tr>
+		<th>Sl.No</th>
+		<th>User Name</th>
+		<th>Email</th>
+		<td></td>
+	</tr>
+	{% for row in data['msgs'] %}
+	<tr>
+		<td>{{ loop.index }}</td>
+		<td>{{ row['uname'] }}</td>
+		<td>{{ row['email'] }}</td>
+		<td><a class="btn btn-success" href="doctor_chat_message?cid={{row['user_id']}}">Message</a></td>
+	</tr>
+	{% endfor %}
+</table>
+{% else %}
+<br>
+<h3>You don't have messages yet</h3>
+<br>
+{% endif %}
+</center>
+</center>
+	  </div>
+           </div>
+           <br><br><br><br><br><br><br><br><br>
+       </div>  
+      
+   </section>
+
+{% include 'footer.html' %}

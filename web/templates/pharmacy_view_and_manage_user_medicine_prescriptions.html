@@ -1,0 +1,53 @@
+{% include 'pharmacy_header.html' %}
+
+  <section style="background: url(/static/images/m5.jpg) center center no-repeat;
+  background-size:cover;
+  background-attachment: fixed;
+  color: #cfcfcf;height: auto;
+        margin-top:80px;" id="home">
+       <div class="overlay">
+           <div class="container">
+               <div class="row">
+
+
+<center>
+	<h1>Manage Medicine</h1>
+	<table class="table" style="width : 1100px;">
+		<tr>
+			<th>Doctor Name</th>
+			<th>Qualification</th>
+			<th>Doctor Ph.</th>
+			<th>User Name</th>
+			<th>User Ph.</th>
+			
+			<th>Medicine Prescription</th>
+			<th>Date</th>
+		</tr>
+		{% for row in data['view_pre'] %}
+		<tr>
+			<td>{{ row['dname'] }}</td>
+			<td>{{ row['qualification'] }}</td>
+			<td>{{ row['dphone'] }}</td>
+			<td>{{ row['pname'] }}</td>
+			<td>{{ row['pphone'] }}</td>
+			
+			<td>{{ row['med_pres_description'] }}</td>
+			<td>{{ row['pre_date'] }}</td>
+			{% if row['md_status']=="Forward" %}
+			<td><a href="pharmacy_add_amount?book_id={{ row['book_id'] }}">Accept</a></td>
+			{% elif row['md_status']=="Accept" %}
+			<td><a href="pharmacy_add_amount?book_id={{ row['book_id'] }}">View Payments</a></td>
+			{% endif %}
+		</tr>
+		{% endfor %}
+	</table>
+</center>
+ </div>
+           </div>
+           <br><br><br><br><br><br><br><br><br>
+       </div>  
+      
+   </section>
+
+
+   {% include 'footer.html' %}

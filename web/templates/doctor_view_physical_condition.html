@@ -1,0 +1,76 @@
+{% include 'doctor_header.html' %}
+    <section style="background: url(/static/images/m2.jpg) center center no-repeat;
+  background-size:cover;
+  background-attachment: fixed;
+  color: #cfcfcf;height: auto;
+        margin-top:80px;" id="home">
+       <div class="overlay">
+           <div class="container">
+               <div class="row">   
+
+               	
+<center>
+	<style type="text/css">
+		th{
+			text-align: right;
+			color: white
+		}
+		td{
+			color: white;
+		}
+	</style>
+	{% if data['view']%}
+	<br>
+	<h1 style="color: white">Patient Name : {{data['view'][0]['uname']}}</h1><br>
+	<h2>Physical Condition</h2><br>
+	<form>
+		<table class="table" style="width: 700px">
+			<tr>
+				<th>Gender :</th>
+				<td>{{data['view'][0]['gender']}}</td>
+			</tr>
+			<tr>
+				<th>Date of Birth :</th>
+				<td>{{data['view'][0]['dob']}}</td>
+			</tr>
+			<tr>
+				<th>Blood Group :</th>				
+				<td>{{data['view'][0]['blood_group']}}</td>
+			</tr>
+			<tr>
+				<th>Blood Pressure :</th>
+				<td>{{data['view'][0]['blood_pressure']}}</td>
+			</tr>
+			<tr>
+				<th>Diabetic :</th>
+				<td>{{data['view'][0]['sugar']}}</td>
+			</tr>
+			<tr>
+				<th>Cholesterol :</th>
+				<td>{{data['view'][0]['cholesterol']}}</td>
+			</tr>
+			<tr>
+				<th>Height :</th>
+				<td>{{data['view'][0]['height']}}</td>
+			</tr>
+			<tr>
+				<th>Weight :</th>
+				<td>{{data['view'][0]['weight']}}</td>
+			</tr>
+			<tr>
+				<th>Phone :</th>
+				<td>{{data['view'][0]['phone']}}</td>
+			</tr>
+		</table>
+	</form>
+	{% else %}<br><br><h1>No Patients</h1><br><br>{% endif %}
+</center>
+</center>
+	  </div>
+           </div>
+           <br><br><br><br><br><br><br><br><br>
+       </div>  
+      
+   </section>
+
+{% include 'footer.html' %}

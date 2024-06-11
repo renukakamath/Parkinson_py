@@ -1,0 +1,46 @@
+{% include 'admin_header.html' %}
+    <section style="background: url(/static/images/m2.jpg) center center no-repeat;
+  background-size:cover;
+  background-attachment: fixed;
+  color: #cfcfcf;height: auto;
+        margin-top:80px;" id="home">
+       <div class="overlay">
+           <div class="container">
+               <div class="row">  
+
+               	
+<center>
+	{% if data['view']%}<br><br>
+	<h1>Patient Payment Details</h1><br>
+	<form>
+		<table class="table">
+			<tr>
+				<th>Sl.No</th>
+				<th>Name</th>
+				<th>Phone</th>
+				<th>Amount</th>
+				<th>Purpose</th>
+				<th>Payment Date</th>
+			</tr>
+			{% for i in data['view'] %}
+			<tr>
+				<td>{{loop.index}}</td>
+				<td>{{i['name']}}</td>
+				<td>{{i['phone']}}</td>
+				<td>{{i['amount']}}</td>
+				<td>{{i['payment_type']}}</td>
+				<td>{{i['payment_date']}}</td>
+			</tr>
+			{% endfor %}
+		</table>
+	</form>
+	{% else %}<br><br><h1>No Payment Details</h1><br><br>{% endif %}
+</center>
+	  </div>
+           </div>
+           <br><br><br><br><br><br><br><br><br>
+       </div>  
+      
+   </section>
+
+{% include 'footer.html' %}

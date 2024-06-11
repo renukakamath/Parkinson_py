@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@drawable/img3"
+    tools:context=".UserAddPatients">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#0E0C0C"
+                android:textSize="25dp"
+                android:text="REGISTRATION" />
+
+            <EditText
+                android:id="@+id/etfname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:gravity="center"
+                android:layout_marginTop="10dp"
+                android:inputType="textPersonName"
+                android:hint="FirstName" />
+
+            <EditText
+                android:id="@+id/etlname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:layout_marginTop="05dp"
+                android:gravity="center"
+                android:inputType="textPersonName"
+                android:hint="LASTNAME" />
+
+
+
+
+
+
+
+            <EditText
+                android:id="@+id/etphone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:layout_marginTop="05dp"
+                android:gravity="center"
+                android:inputType="textPersonName"
+                android:hint="PHONE" />
+
+            <EditText
+                android:id="@+id/etemail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:layout_marginTop="05dp"
+                android:gravity="center"
+                android:inputType="textEmailAddress"
+                android:hint="EMAIL"/>
+
+            <!--    <EditText-->
+            <!--        android:id="@+id/ethouse"-->
+            <!--        android:layout_width="match_parent"-->
+            <!--        android:layout_height="wrap_content"-->
+            <!--        android:ems="10"-->
+            <!--        android:layout_marginTop="05dp"-->
+            <!--        android:gravity="center"-->
+            <!--        android:inputType="textPersonName"-->
+            <!--        android:hint="HOUSE NAME" />-->
+
+
+
+            <EditText
+                android:id="@+id/etplace"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:layout_marginTop="05dp"
+                android:gravity="center"
+                android:inputType="textPersonName"
+                android:hint="PLACE" />
+
+
+            <EditText
+                android:id="@+id/hno"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:layout_marginTop="05dp"
+                android:gravity="center"
+                android:inputType="textPersonName"
+                android:hint="HOUSE NAME" />
+
+            <EditText
+                android:id="@+id/gen"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:layout_marginTop="05dp"
+                android:gravity="center"
+                android:inputType="textPersonName"
+                android:hint="GENDER" />
+
+
+
+            <EditText
+                android:id="@+id/bgroup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:layout_marginTop="05dp"
+                android:gravity="center"
+                android:inputType="textPersonName"
+                android:hint="BLOOD GROUP" />
+
+
+
+            <EditText
+                android:id="@+id/dob"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:layout_marginTop="05dp"
+                android:gravity="center"
+                android:inputType="textPersonName"
+                android:hint="DOB" />
+
+
+            <Button
+                android:id="@+id/button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="05dp"
+                android:text="REGISTER" />
+
+
+        </LinearLayout>
+    </ScrollView>
+
+
+
+
+</LinearLayout>

@@ -1,0 +1,78 @@
+{% include 'admin_header.html' %}
+
+  <section style="background: url(/static/images/m5.jpg) center center no-repeat;
+  background-size:cover;
+  background-attachment: fixed;
+  color: #cfcfcf;height: auto;
+        margin-top:80px;" id="home">
+       <div class="overlay">
+           <div class="container">
+               <div class="row">
+                  <center>
+<center>
+		<br>
+		<h1>Department</h1>
+		<br><br>
+		{% if data['view_update'] %}
+		<h3>Update Details</h3><br>
+	<form method="post" enctype="multipart/form-data">
+	<table class="table" style="width: 400px">
+		<tr>
+			<th>Department</th>
+			<td><input type="text" name="dept" value="{{data['view_update'][0]['department']}}" pattern="[a-zA-Z\s]{0,30}" title="Only Characters Allowed" required class="form-control"></td>
+		</tr>
+	
+		<tr><td><br></td></tr>
+		<tr>
+			<td colspan="2" align="center"><input class="btn btn-info" type="submit" name="update_submit" value="Update"></td>
+		</tr>
+	</table>
+	</form>
+
+		{% else %}
+	<form method="post" enctype="multipart/form-data">
+	<table class="table" style="width: 400px">
+		<tr>
+			<th>Department</th>
+			<td><input type="text" name="dept" pattern="[a-zA-Z\s]{0,30}" title="Only Characters Allowed" required class="form-control"></td>
+		</tr>
+		
+		<tr><td><br></td></tr>
+		<tr>
+			<td colspan="2" align="center"><input class="btn btn-info" type="submit" name="submit" value="ADD"></td>
+		</tr>
+	</table>
+	</form>
+	{% endif %}
+<br><br>
+{% if data['view'] %}
+<h2>Department Details</h2><br>
+<table class="table">
+	<tr>
+		<th>Sl.No</th>
+		<th>Department</th>
+		<th></th>
+	</tr>
+	{% for r in data['view'] %}
+	<tr>
+		<td>{{ loop.index }}</td>
+		<td>{{ r['department'] }}</td>
+		
+		<td>
+			<a class="btn btn-success" href="?action=update&id={{r['department_id']}}">Update</a>
+			<a class="btn btn-danger" href="?action=delete&id={{r['department_id']}}">Delete</a>
+		</td>
+	</tr>
+	{% endfor %}
+</table>
+{% endif %}
+
+	</center>
+ </div>
+           </div>
+           <br><br><br><br><br><br><br><br><br>
+       </div>  
+      
+   </section>
+
+{% include 'footer.html' %}

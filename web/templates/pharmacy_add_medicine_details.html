@@ -1,0 +1,79 @@
+{% include 'pharmacy_header.html' %}
+
+  <section style="background: url(/static/images/m5.jpg) center center no-repeat;
+  background-size:cover;
+  background-attachment: fixed;
+  color: #cfcfcf;height: auto;
+        margin-top:80px;" id="home">
+       <div class="overlay">
+           <div class="container">
+               <div class="row">
+
+
+<center><br>
+<h1>Add Medicines</h1><br>
+	<form method="post">
+	<table class="table" style="width: 600px">
+			<tr>
+				<th>Medicine Name</th>
+				<td><input type="text" pattern="[a-zA-Z\s]{0,30}" class="form-control" name="m_name"></td>
+			</tr>
+			<tr>
+				<th>Description:</th>
+				<th><textarea pattern="[a-zA-Z\s]{0,30}" class="form-control" name="desc"></textarea></th>
+			</tr>
+			<tr>
+				<th>Expiry Date</th>
+				<td><input type="date" class="form-control"  name="e_date"></td>
+			</tr>
+			<tr>
+				<th>Rate</th>
+				<td><input type="number" min="0" class="form-control" name="rt"></td>
+			</tr>
+			<tr>
+				<th>Available Quantity</th>
+				<td><input type="number" min="0" class="form-control" name="available_qty"></td>
+			</tr>
+			<tr><td><br></td></tr>
+			<tr>
+				<td colspan="2" align="center"><input type="submit" class="btn btn-success" name="submit" value="Add"></td>
+			</tr>
+		</table>
+<br><br>
+	{% if data['viewr']%}
+		<h2>Medicines Details</h2><br>
+		<div style="height:200px; width: 700px; overflow-y: scroll;">
+		<table class="table" style="width: 1000px">
+			<tr>
+				<th>Sl.No</th>
+				<th>Medicine Name</th>
+				<th>Decsiption</th>
+				<th>Expiry Date</th>
+				<th>Rate</th>
+				<th>Quantity</th>
+				<th></th>
+			</tr>
+			{% for i in data['viewr'] %}
+			<tr>
+				<td>{{loop.index}}</td>
+				<td>{{i['medicine_name']}}</td>
+				<td>{{i['description']}}</td>
+				<td>{{i['expiry_date']}}</td>
+				<td>{{i['rate']}}</td>
+				<td>{{i['available_qty']}}</td>
+				<td><a class="btn btn-success" href="?id={{i['medicine_id']}}">Remove</a></td>
+			</tr>
+			{% endfor %}
+		</table>
+	</div>
+	</form><br><br>{% endif %}<br>
+</center>
+
+ </div>
+           </div>
+           <br><br><br><br><br><br><br><br><br>
+       </div>  
+      
+   </section>
+
+{% include 'footer.html' %}

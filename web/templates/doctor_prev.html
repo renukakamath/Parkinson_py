@@ -1,0 +1,44 @@
+{% include 'doctor_header.html' %}
+{% include 'sub_header.html' %}
+<!-- NOt completed -->
+<center><br><br>
+	<h2 style="color: black">User Name : {{data['view'][0]['uname']}}</h2>
+	<h2 style="color: black">Pet Name : {{data['view'][0]['name']}} - {{data['view'][0]['breed']}}</h2>
+	{% if data['view']%}
+	<form method="post">
+		<table>
+			<tr>
+				<th style="text-align: right;color: brown">Phone :</th>
+				<td style="color: brown">+91&nbsp;{{data['view'][0]['phone']}}</td>
+			</tr>
+		</table><br>
+		{% if data['viewdet'] %}<br>
+		<h3>Previous Lab Test History</h3><br>
+		<div style="height:150px; width: 800px; overflow-y: scroll;">
+		<table class=table>
+			<tr>
+				<th>Sl.No</th>
+				<th>Medicine</th>
+				<th>Doctor Description</th>
+				<th>Lab Report</th>
+				<th>Date</th>
+			</tr>
+			{% for i in data['viewdet'] %}
+			<tr>
+				<td>{{loop.index}}</td>
+				<td>{{i['test_name']}}</td>
+				<td>{{i['lab_pres_description']}}</td>
+				<td>{{i['report_description']}}</td>
+				<td>{{i['date_time']}}</td>
+			</tr>
+			{% endfor %}
+		</table>
+	</div>
+	</form>
+{% else %}
+<br><h3>No Test Record</h3>
+	{% endif %}
+	{% else %}<br><br><h1>No Previous Lab Test History</h1><br><br>{% endif %}
+</center>
+{% include 'sub_footer.html' %}
+{% include 'footer.html' %}

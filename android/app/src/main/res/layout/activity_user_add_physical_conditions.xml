@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/img3"
+    android:orientation="vertical"
+    android:gravity="center"
+    tools:context=".UserAddPhysicalConditions">
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#190202"
+        android:textSize="30dp"
+        android:text="Physical Conditions" />
+
+    <EditText
+        android:id="@+id/bp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:layout_marginTop="20dp"
+        android:inputType="textPersonName"
+        android:hint="Blood Pressure" />
+
+    <EditText
+        android:id="@+id/etsugar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:layout_marginTop="10dp"
+        android:inputType="textPersonName"
+        android:hint="Sugar" />
+
+    <EditText
+        android:id="@+id/etcho"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:layout_marginTop="10dp"
+        android:inputType="textPersonName"
+        android:hint="Cholestrol" />
+
+    <EditText
+        android:id="@+id/etheight"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:layout_marginTop="10dp"
+        android:inputType="textPersonName"
+        android:hint="Height" />
+
+    <EditText
+        android:id="@+id/etweight"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:layout_marginTop="10dp"
+        android:inputType="textPersonName"
+        android:hint="Weight" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="ADD" />
+
+</LinearLayout>

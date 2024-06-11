@@ -1,0 +1,42 @@
+{% include 'doctor_header.html' %}
+    <section style="background: url(/static/images/m2.jpg) center center no-repeat;
+  background-size:cover;
+  background-attachment: fixed;
+  color: #cfcfcf;height: auto;
+        margin-top:80px;" id="home">
+       <div class="overlay">
+           <div class="container">
+               <div class="row">  
+
+
+
+{% if data['msgs'] %}
+
+<table class="table">
+	<tr>
+		<th>Sl.No</th>
+		<th>Patient Name</th>
+		<td></td>
+	</tr>
+	{% for row in data['msgs'] %}
+	<tr>
+		<td>{{ loop.index }}</td>
+		<td>{{ row['uname'] }}</td>
+		<td><a class="btn btn-info" href="doctor_view_physical_condition?cid={{row['patient_id']}}">Physical Condition</a></td>
+	</tr>
+	{% endfor %}
+</table>
+{% else %}
+<br>
+<h3>No Data</h3>
+<br>
+{% endif %}
+</center>
+	  </div>
+           </div>
+           <br><br><br><br><br><br><br><br><br>
+       </div>  
+      
+   </section>
+
+  {% include 'footer.html' %}
